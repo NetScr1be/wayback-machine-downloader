@@ -1,0 +1,24 @@
+Source: https://stackoverflow.com/questions/37720892/you-dont-have-write-permissions-for-the-var-lib-gems-2-3-0-directory
+
+If you want to use the distribution Ruby instead of rb-env/rvm, you can set up a GEM_HOME for your current user.
+
+Start by creating a directory to store the Ruby gems for your user:
+
+    $ mkdir ~/.ruby
+
+Then update your shell to use that directory for GEM_HOME and to update your PATH variable to include the Ruby gem bin directory.
+
+    $ echo 'export GEM_HOME=~/.ruby/' >> ~/.bashrc
+
+    $ echo 'export PATH="$PATH:~/.ruby/bin"' >> ~/.bashrc
+
+    $ source ~/.bashrc
+
+(That last line will reload the environment variables in your current shell.)
+
+Now you should be able to install Ruby gems under your user using the gem command.
+
+I was able to get this working with Ruby 2.5.1 under Ubuntu 18.04.
+
+2020-12-06 Tested Good on Linux kali 5.9.0-kali2-amd64 #1 SMP Debian 5.9.6-1kali1 (2020-11-11) x86_64 GNU/Linux
+
