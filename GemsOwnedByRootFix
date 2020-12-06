@@ -1,5 +1,14 @@
 Source: https://stackoverflow.com/questions/37720892/you-dont-have-write-permissions-for-the-var-lib-gems-2-3-0-directory
 
+Fixes:
+
+> `$ gem install wayback_machine_downloader'`
+
+    Fetching wayback_machine_downloader-2.2.1.gem
+    ERROR:  While executing gem ... (Gem::FilePermissionError)
+        You don't have write permissions for the /var/lib/gems/2.7.0 directory.
+
+
 If you want to use the distribution Ruby instead of rb-env/rvm, you can set up a GEM_HOME for your current user.
 
 Start by creating a directory to store the Ruby gems for your user:
